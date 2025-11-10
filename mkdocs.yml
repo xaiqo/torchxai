@@ -1,0 +1,22 @@
+site_name: torchxai
+site_description: Explainability Toolkit for PyTorch
+theme:
+  name: material
+nav:
+  - Overview: docs/index.md
+  - Getting Started: docs/getting_started.md
+  - Architecture: docs/architecture.md
+  - Explainers: docs/explainers.md
+  - Metrics: docs/metrics.md
+  - Visualization: docs/visualization.md
+  - Benchmarking: docs/benchmarking.md
+  - Transformers: docs/transformers.md
+  - Drift Tracking: docs/drift_tracking.md
+  - Plugin System: docs/plugin_system.md
+  - Distributed: docs/distributed.md
+  - Evaluation Protocols: docs/evaluation_protocols.md
+  - Roadmap: docs/roadmap.md
+  - Project Brief: docs/project.md
+
+
+
