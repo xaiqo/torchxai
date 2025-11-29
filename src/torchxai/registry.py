@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import TypeVar
+from typing import Callable, TypeVar
 
 from torchxai.explainers.base import Explainer
 from torchxai.metrics.base import Metric
@@ -14,14 +14,14 @@ class _Registry:
         self._explainers: dict[str, type[Explainer]] = {}
         self._metrics: dict[str, type[Metric]] = {}
 
-    def register_explainer(self, name: str):
+    def register_explainer(self, name: str) -> Callable[[type[E]], type[E]]:
         def decorator(cls: type[E]) -> type[E]:
             self._explainers[name] = cls
             return cls
 
         return decorator
 
-    def register_metric(self, name: str):
+    def register_metric(self, name: str) -> Callable[[type[M]], type[M]]:
         def decorator(cls: type[M]) -> type[M]:
             self._metrics[name] = cls
             return cls
